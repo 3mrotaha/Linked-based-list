@@ -13,7 +13,7 @@ ErrorStates_t CreateList(List_t*);
 	post: - deletes the whole list elements
 	      - if the list is not empty, it returns (LIST_DESTROYED)
 		  - if the list is empty, it returns (LIST_EMPTY)
-	complexity: O(1)
+	complexity: O(N)
 */
 ErrorStates_t DestroyList(List_t*);
 
@@ -50,6 +50,7 @@ ErrorStates_t ListSize(int*, List_t);
 	post: - inserts an element to a specific index in the list
 	      - if the list is not full, it returns (LIST_INSERTION_DONE)
 		  - if the list is full, it returns (LIST_FULL)
+		  - returns (LIST_NULL_POINTER) if it faild to create a node
 	complexity: O(N)
 */
 ErrorStates_t ListInsert(int, ListEntry, List_t*);
@@ -70,7 +71,7 @@ ErrorStates_t ListDelete(int, ListEntry*, List_t*);
 	post: - getd an element from a specific index in the list
 	      - if the list is not empty, it returns (LIST_RETRIVE_DONE)
 		  - if the list is empty, it returns (LIST_EMPTY)
-	complexity: O(1)
+	complexity: O(N)
 */
 ErrorStates_t ListRetrieve(int, ListEntry*, List_t);
 
@@ -80,7 +81,7 @@ ErrorStates_t ListRetrieve(int, ListEntry*, List_t);
 	post: - replace an element value in a specific index in the list
 	      - if the list is not empty, it returns (LIST_REPLACEMENT_DONE)
 		  - if the list is empty, it returns (LIST_EMPTY)
-	complexity: O(1)
+	complexity: O(N)
 */
 ErrorStates_t ListReplace(int, ListEntry, List_t*);
 
